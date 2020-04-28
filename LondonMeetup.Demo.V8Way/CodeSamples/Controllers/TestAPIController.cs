@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using Umbraco.Core.Logging;
 using Umbraco.Web.WebApi;
 

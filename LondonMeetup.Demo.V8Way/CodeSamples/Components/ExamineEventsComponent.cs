@@ -31,11 +31,12 @@ namespace LondonMeetup.Demo.V8Way.CodeSamples.Components
             if (!(index is BaseIndexProvider indexProvider))
                 throw new InvalidOperationException("Could not cast");
 
+            //handler
+            indexProvider.TransformingIndexValues += IndexProviderTransformingIndexValues;
+
             //add a new field definition to the index
             index.FieldDefinitionCollection.TryAdd(new FieldDefinition("blogDateLong", FieldDefinitionTypes.Long));
 
-            //handler
-            indexProvider.TransformingIndexValues += IndexProviderTransformingIndexValues;
         }
 
         private void IndexProviderTransformingIndexValues(object sender, IndexingItemEventArgs e)

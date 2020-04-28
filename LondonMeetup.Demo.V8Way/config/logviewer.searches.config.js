@@ -38,5 +38,13 @@
   {
     "name": "Find all logs that the message that starts with 'end' in it with SQL like",
     "query": "@Message like 'end%'"
+  },
+  {
+    "name": "saved",
+    "query": "Scheduled Logger run starting"
+  },
+  {
+    "name": "MessageTemplate search",
+    "query": "@MessageTemplate ='{content} has been saved and event fired!'"
   }
 ]

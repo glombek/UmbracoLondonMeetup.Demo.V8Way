@@ -4,7 +4,8 @@
       "alias": "myWelcomeDashboard", //dashboard alias
       "view": "~/App_Plugins/MyCustomDashboards/MyWelcomeDashboard/mywelcomedashboard.html", //view path
       "sections": [ "content" ], //sections(alias) in which the dashboard will appear
-      "weight": -10 // controls the position of dashboard in case of multiple dashboards. lower numbers appear first
+      "weight": -10 // controls the position of dashboard in case of multiple dashboards. lower numbers appear first,
+      
     }
   ],
   "javascript": [

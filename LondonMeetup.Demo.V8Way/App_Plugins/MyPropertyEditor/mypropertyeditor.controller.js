@@ -1,25 +1,12 @@
-﻿ //angular
- //       .module('umbraco')
- //       .component('My.PropertyEditor',
- //           {
- //               templateUrl: '/App_Plugins/MyPropertyEditor/view.html',
- //               controller: MyPropertyEditorController,
- //               controllerAs: 'vm',
- //               require: {
- //                   umbProperty: '?^umbProperty'
- //               }
- //           });
-
-
-function MyPropertyEditorController($scope) {
+﻿function MyPropertyEditorController($scope) {
     function removeAllEntries() {
-        console.log('here');
+        alert('The model value is ' + $scope.model.value);
     }
 
     var removeAllEntriesAction = {
         labelKey: 'MyPropertyEditor_labelForMyAction',
         labelTokens: [],
-        icon: 'trash',
+        icon: 'heart',
         method: removeAllEntries,
         isDisabled: false
     };

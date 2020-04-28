@@ -22,21 +22,25 @@ namespace LondonMeetup.Demo.V8Way.CodeSamples.Components
         // initialize: runs once when Umbraco starts
         public void Initialize()
         {
-            ContentService.Saving += this.ContentService_Saving;
+            ContentService.Saved += this.ContentService_Saved;
         }
 
         // terminate: runs once when Umbraco stops
         public void Terminate()
         { }
 
-        private void ContentService_Saving(IContentService sender, ContentSavingEventArgs e)
+        private void ContentService_Saved(IContentService sender, ContentSavedEventArgs e)
         {
             foreach (var content in e.SavedEntities
                 // Check if the content item type has a specific alias
                 .Where(c => c.ContentType.Alias.InvariantEquals("Product")))
             {
                 // Do something if the content is using the MyContentType doctype
-             this._logger.Info<MyPublishEventComponent>("{content} has been saved and event fired!", content.Name);
+                this._logger.Info<MyPublishEventComponent>("{content} has been saved and event fired!", content.Name);
+
+
+                // message template stored with the value of content.Name as a part of message template, not useful 
+                this._logger.Info<MyPublishEventComponent>($"{content.Name} has been saved and event fired");
             }
         }
     }
